@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteção dos Polinizadores</title>
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #faf8f2;
+        }
+
+        /* --- ESTILOS DO CABEÇALHO --- */
+        .header {
+            background-color: #1b3d2f; /* Verde botânico profundo */
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- LOGO --- */
+        .logo {
+            color: #ffcc00; /* Amarelo Mel */
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* --- MENU DESKTOP --- */
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: #ffcc00;
+        }
+
+        /* --- BOTÃO DE INCENTIVO --- */
+        .cta-button {
+            background-color: #ffcc00;
+            color: #1b3d2f;
+            padding: 0.6rem 1.2rem;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffe066;
+            transform: scale(1.05);
+        }
+
+        /* --- MENU HAMBÚRGUER --- */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            transition: all 0.3s ease-in-out;
+            background-color: #ffffff;
+            border-radius: 2px;
+        }
+
+        /* --- RESPONSIVIDADE (TELAS ATÉ 768px) --- */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+
+            /* Transforma o menu em uma cortina lateral */
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px; /* Altura do cabeçalho */
+                gap: 0;
+                flex-direction: column;
+                background-color: #1b3d2f;
+                width: 100%;
+                height: calc(100vh - 70px);
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-item {
+                margin: 2rem 0;
+            }
+
+            /* Ativação do menu mobile via JS */
+            .nav-menu.active {
+                left: 0;
+            }
+
+            /* Animação do botão Hambúrguer virando um "X" */
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+                background-color: #ffcc00;
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+                background-color: #ffcc00;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navbar">
+            <!-- Logotipo com ícone representativo -->
+            <a href="#" class="logo">🐝 SOS Abelhas</a>
+            
+            <!-- Menu de Navegação -->
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#inicio" class="nav-link active">Início</a></li>
+                <li class="nav-item"><a href="#importancia" class="nav-link">Importância</a></li>
+                <li class="nav-item"><a href="#ameacas" class="nav-link">Ameaças</a></li>
+                <li class="nav-item"><a href="#como-ajudar" class="nav-link">Como Ajudar</a></li>
+                <li class="nav-item"><a href="#projetos" class="nav-link">Projetos</a></li>
+                <li class="nav-item"><a href="#salve" class="cta-button">Adote uma Colmeia</a></li>
+            </ul>
+
+            <!-- Botão do Menu Hambúrguer -->
+            <button class="hamburger" aria-label="Abrir menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <script>
+        // --- INTERAÇÃO DO MENU ---
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link, .cta-button");
+
+        // Abre e fecha o menu ao clicar no hambúrguer
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Fecha o menu automaticamente ao clicar em qualquer link
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+</html>
