@@ -21,3 +21,26 @@ function checkAnswer(userAnswer) {
         feedbackElement.style.color = "#c0392b"; // Vermelho para erro
     }
 }
+// Objeto de dados para o Quiz do usuário
+const quizChallenge = {
+    question: "A polinização afeta apenas a produção de frutas, sem impacto em outros alimentos?",
+    correctAnswer: false, // Falso. Impacta sementes, oleaginosas, pastagens, etc.
+    explanationCorrect: "Perfeito! A polinização impacta a produção de legumes, vegetais, castanhas e até plantas usadas para alimentar o gado.",
+    explanationIncorrect: "Não é bem assim. A polinização afeta sementes, grãos, óleos vegetais e o desenvolvimento de pastagens agrícolas."
+};
+
+// Exibe a pergunta na interface de forma dinâmica
+document.getElementById('quiz-question').innerText = quizChallenge.question;
+
+// Gerencia a verificação de acerto do botão clicado
+function checkAnswer(userChoice) {
+    const feedbackField = document.getElementById('quiz-feedback');
+    
+    if (userChoice === quizChallenge.correctAnswer) {
+        feedbackField.innerText = quizChallenge.explanationCorrect;
+        feedbackField.style.color = "#27ae60"; // Estilo verde para acertos
+    } else {
+        feedbackField.innerText = quizChallenge.explanationIncorrect;
+        feedbackField.style.color = "#c0392b"; // Estilo vermelho para erros
+    }
+}

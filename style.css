@@ -91,3 +91,129 @@ footer {
     margin-top: 3rem;
     font-size: 0.9rem;
 }
+/* Reset Geral */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #fbf9f3;
+    color: #2c3e50;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    background: linear-gradient(135deg, #e67e22, #f1c40f);
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Container */
+.container {
+    max-width: 850px;
+    margin: 3rem auto;
+    padding: 0 1rem;
+}
+
+/* Cards de Conteúdo */
+.card {
+    background: #fff;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+    border-left: 6px solid #f1c40f;
+}
+
+.card h2 {
+    color: #d35400;
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+}
+
+.card p {
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+/* Customização dos Cards Temáticos */
+.alert-card {
+    border-left-color: #e74c3c;
+}
+.alert-card h2 {
+    color: #c0392b;
+}
+
+.help-card {
+    border-left-color: #2ecc71;
+}
+.help-card h2 {
+    color: #27ae60;
+}
+
+/* Listas */
+ul {
+    margin-left: 1.5rem;
+    list-style-type: square;
+}
+
+li {
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+
+/* Quiz Interativo */
+.quiz-options {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+button {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background-color: #d35400;
+    transform: translateY(-2px);
+}
+
+.feedback {
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2.5rem;
+    background-color: #2c3e50;
+    color: #bdc3c7;
+    margin-top: 4rem;
+}
